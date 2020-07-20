@@ -1,0 +1,79 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<title>Personality Prediction System</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<!-- 
+<script language = javascript>
+    function getSelectedValue()
+   {
+     var selectedValue = document.getElementById("menu");
+      var displaytext = document.getElementById("txtvalue");
+     displaytext.value="";
+      for(var i=0; i<selectedValue.options.length; i++)
+    {
+         if(selectedValue.options[i].selected === true)
+     {
+         displaytext.value += selectedValue.options[i].value + " ";
+        document.getElementById("txtvalue").innerHTML=displaytext.value;
+     }
+
+    }
+} 
+
+</script> -->
+</head>
+<body>
+<div class = "dropBox" style="width: 400px">
+<img src="{% static 'skills.png' %}" class="user">
+<br>
+<div style="margin-right:0px;text-align:right">
+</div>
+<form action="scanned" method="GET">
+<table rules = none style="width: 400px">
+<tr>
+<td><h2>Technical Skills</h2></td>
+</tr>
+<tr>
+  <td colspan="2">
+    <p style="font-size: 16px;color:white;line-height:1.5">Total Users Found:{{totalCount}} <br>User Percentage:{{precent}} % <br>{{foundCount}} Users Found for {{selected}}</p>
+  </td>
+</tr>
+<tr>
+<td  >
+<select id="menu" name="menu"style="width: 50%" >
+<!-- onChange="getSelectedValue();"> -->
+<option value="1">Select</option>
+<option value="C">C</option>
+<option value="C++">C++</option>
+<option value="JAVA">Java</option>
+<option value="HTML">HTML</option>
+<option value="CSS">CSS</option>
+<option value="JAVASCRIPT">Javascript</option>
+<option value="AJAX">Ajax</option>
+<option value="NODEJS">Nodejs</option>
+<option value="PYTHON">Python</option>
+</select>
+</td>
+<td style="width:60%;margin-left:-80px" >
+  <select name="display" multiple="multiple" id="" style="width:80%">
+    {% if  found is False %}
+    <option value="subItem" >{{selectedValue}}</option>
+    {% else %}
+    {% for oneRow in selectedValue %}
+    <option value="">{{oneRow.0}}</option>
+    {% endfor %}
+    {% endif %}
+</select>
+</td>
+</tr>
+<td>
+<input type=submit name=submit>
+</td>
+</table>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<title>  SignUp form </title>
+		<link rel="stylesheet" href="{% static 'style.css' %}">
+	
+<script>
+    function validateForm() {
+        var username = document.forms["signupForm"]["enteredUsername"].value;
+        var email = document.forms["signupForm"]["enteredEmail"].value;
+        var password = document.forms["signupForm"]["enteredPassword"].value;
+        var contact = document.forms["signupForm"]["enteredMobile"].value;
+
+        if (username == "") {
+          alert("Username must be filled out");
+          return false;
+        }
+        if (email == "") {
+            alert("and email is required for registeration");
+            return false;
+          }
+          if (password == "") {
+            alert("Please enter a password");
+            return false;
+          }
+          if (contact == "") {
+            alert("Enter Mobile number");
+            return false;
+          }
+        
+      }
+</script>
+	</head>
+	<body>
+	<div class="loginBox">
+		<img src="{% static 'userlogin.png'%}" class="user">
+		<form name="signupForm" action="signupsuccess" onsubmit="return validateForm()" method="GET">
+                                                    <p>Username</p>
+			<input type="text" id="username" name = "enteredUsername" placeholder="Enter Username">
+			<p>Email</p>
+			<input type="text" name = "enteredEmail" placeholder="Enter Email">
+			<p>Password</p>
+			<input type="password" name = "enteredPassword" placeholder="Enter Password">
+                                                     <p>Mobile No</p>
+			<input type="text" name = "enteredMobile" placeholder="Enter Mobile No">
+			<input type="submit" name = "" value="Sign Up">
+			 <p>Already Registered?<a href="login">Sign In</a></p>
+		</form>
+	</div>
+	</body>
+</html>

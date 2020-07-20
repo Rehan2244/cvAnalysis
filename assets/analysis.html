@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<title>Personality Prediction System</title>
+<link rel="stylesheet" href="style.css">
+
+<script language = javascript>
+    function getSelectedValue()
+   {
+     var selectedValue = document.getElementById("menu");
+      var displaytext = document.getElementById("txtvalue");
+     displaytext.value="";
+      for(var i=0; i<selectedValue.options.length; i++)
+    {
+         if(selectedValue.options[i].selected === true)
+     {
+         displaytext.value += selectedValue.options[i].value + " ";
+        document.getElementById("txtvalue").innerHTML=displaytext.value;
+     }
+
+    }
+} 
+
+</script>
+</head>
+<body>
+
+<div class = "dropBox">
+<img src="skills.png" class="user">
+<table rules = none>
+<tr>
+<td><h2>Technical Skills</h2></td>
+</tr>
+<tr>
+<td>
+<select id = "menu" multiple="multiple" onChange="getSelectedValue();">
+<option>Select</option>
+<option>C</option>
+<option>C++</option>
+<option>Java</option>
+<option>HTML</option>
+<option>CSS</option>
+<option>Javascript</option>
+<option>Ajax</option>
+<option>Nodejs</option>
+<option>Python</option>
+</select>
+</td>
+<td>
+<textarea rows="5" cols="7"  id="txtvalue"> </textarea>
+</td>
+</tr>
+<td>
+<input type=submit name=submit value="Scan CV">
+</td>
+</div>
+
+</body>
+</html>

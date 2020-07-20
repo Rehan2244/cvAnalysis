@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+<head>
+<title>  Upload form </title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+        {% block content %}
+<div class ="uploadform loginBox">
+<h2>Upload Resume</h2>
+<form method="POST" action="uploadsuccess" enctype="multipart/form-data"> {% csrf_token %}
+<input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+<br>
+Enter Username:
+<input type="text" name="username">
+<!--<label for="fileupload"> Select a file to upload</label>-->
+<input type="submit" name ="" value="Upload Resume">
+ </form>
+</div>
+{% endblock %}
+</body>
+</html>
+

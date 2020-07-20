@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="loginBox" style="margin-left:-150px;width: 600px;text-align:center">
+        <div style="width: 50%;float:right">
+                <a href="adminlogin"><img src="{% static 'user.png' %}" style="width: 60%" alt=""></a>
+            
+            <br>
+           <p>recruiter Login</p>
+        </div>
+        <div style="width: 50%;float:left">
+                <a href="login"><img src="{% static 'userlogin.png' %}" style="width: 60%" alt=""></a>
+           <br>
+        <p>User Login</p>
+       </div>
+    </div>
+</body>
+</html>
